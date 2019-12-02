@@ -1,0 +1,22 @@
+{
+  "1": {
+    "title": "The Godfather",
+    "rating": "99%"
+  },
+  "2": {
+    "title": "Terminator II",
+    "rating": "95%"
+  },
+  "3": {
+    "title": "Titanic",
+    "rating": "100%"
+  },
+  "4": {
+    "title": "Carlito's Way",
+    "rating": "80%"
+  },
+  "5": {
+    "title": "Syrup",
+    "rating": "20%"
+  }
+}
