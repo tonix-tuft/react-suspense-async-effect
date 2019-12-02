@@ -1,6 +1,6 @@
 # react-suspense-async-effect
 
-Asynchronous, feels synchronous
+Asynchronous, feels synchronous.
 
 [![NPM](https://img.shields.io/npm/v/react-suspense-async-effect.svg)](https://www.npmjs.com/package/react-suspense-async-effect)
 
