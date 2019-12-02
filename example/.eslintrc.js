@@ -19,6 +19,7 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "jsx-quotes": "off",
+    "no-void": 0,
     quotes: "off",
     semi: "off",
     "space-before-function-paren": "off",
