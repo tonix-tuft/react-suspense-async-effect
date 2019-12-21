@@ -16,10 +16,10 @@ const MovieDetails = ({ id }) => {
     <div>
       <div>Movie details</div>
       {(!reason && (
-        <React.Fragment>
+        <>
           <div>Title: {movieDetails.title}</div>
           <div>Rating: {movieDetails.rating}</div>
-        </React.Fragment>
+        </>
       )) || <div>{reason}</div>}
     </div>
   );

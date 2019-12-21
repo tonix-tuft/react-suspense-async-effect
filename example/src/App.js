@@ -8,22 +8,22 @@ function App() {
   return (
     <div>
       <div className="spacing">
-        <Suspense fallback="Loading...">
+        <Suspense fallback={<div>Loading...</div>}>
           <Example />
         </Suspense>
       </div>
       <div className="spacing">
-        <Suspense fallback="Loading MovieApp...">
+        <Suspense fallback={<div>Loading MovieApp...</div>}>
           <MovieApp />
         </Suspense>
       </div>
       <div className="spacing">
-        <Suspense fallback="Loading Sample1...">
+        <Suspense fallback={<div>Loading Sample1...</div>}>
           <Sample1 />
         </Suspense>
       </div>
       <div className="spacing">
-        <Suspense fallback="Loading Sample2...">
+        <Suspense fallback={<div>Loading Sample2...</div>}>
           <Sample2 />
         </Suspense>
       </div>
