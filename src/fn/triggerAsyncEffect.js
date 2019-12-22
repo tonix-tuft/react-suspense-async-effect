@@ -34,6 +34,15 @@ import { PROPS } from "../constants";
  *
  * @param {Array} cache The cache array.
  * @param {Object} asyncEffectOptions The async effect options.
+ * @return {Array} An array with the value of the fulfilled promise at index 0 if the promise resolved.
+ *                 An array with the reason of the rejected promise at index 1 if the promise rejected
+ *                 and the "shouldReturnReason" async effect option is "true".
+ *                 The array will also have a "isFulfilled" boolean flag at index 2 indicating whether the promise
+ *                 is fulfilled or not and a "hasRejected" boolean flag at index 3 indicating whether the promise
+ *                 has rejected or not.
+ *                 If the underlying promise rejected and the "shouldReturnReason" option is "false",
+ *                 then this function will throw the reason.
+ * @throws {*} If the "shouldReturnReason" option is "false" and the promise has rejected with a reason.
  */
 function returnOrThrow(cache, asyncEffectOptions) {
   const [, reason, isFulfilled, hasRejected] = cache;
