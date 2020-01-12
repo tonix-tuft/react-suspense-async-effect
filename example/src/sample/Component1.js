@@ -44,7 +44,7 @@ export const Component1 = props => {
   const [data12] = useAsyncEffect(asyncEffect(aPromiseFactory)(_, _)("a")("b")); // Same as above.
   const [data13] = useAsyncEffect(asyncEffect(aPromiseFactory)("a")("b")); // Same as above.
 
-  // Curried basic promise factory function with async effect context.
+  // Another curried basic promise factory function.
   const [data2] = useAsyncEffect(asyncEffect(aPromiseFactory)("c", "d"));
 
   // Curried promise factory function which accepts a single POJO object as argument.
