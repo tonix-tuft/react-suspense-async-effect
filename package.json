@@ -85,7 +85,7 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "js-utl": "^2.0.0"
+    "js-utl": "^3.0.0"
   },
   "files": [
     "dist"
