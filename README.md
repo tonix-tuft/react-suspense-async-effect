@@ -54,7 +54,7 @@ export default Example;
 
 // App.js
 import React, { Suspense } from "react";
-import Example from "./sample/Example";
+import Example from "./Example";
 
 function App() {
   return (
