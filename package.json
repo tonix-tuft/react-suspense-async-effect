@@ -38,7 +38,6 @@
     "publish-major": "npm run prepare && npm version major && npm run publish-git"
   },
   "peerDependencies": {
-    "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },
@@ -89,6 +88,7 @@
     "typescript": "^3.8.2"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "js-utl": "^3.1.0"
   },
   "files": [

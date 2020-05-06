@@ -1,13 +1,21 @@
 # react-suspense-async-effect
 
-Asynchronous, feels synchronous.
+_Asynchronous, feels synchronous._
+
+A library to perform asynchronous effects in React following the Suspense API principles providing asynchronous curried functions with a synchronous feel.
 
 [![NPM](https://img.shields.io/npm/v/react-suspense-async-effect.svg)](https://www.npmjs.com/package/react-suspense-async-effect)
 
-## Install
+## Installation
 
 ```bash
 npm install --save react-suspense-async-effect
+```
+
+Install peer dependencies:
+
+```bash
+npm install --save react react-dom
 ```
 
 ## Usage
@@ -19,7 +27,7 @@ import { useAsyncEffect, asyncEffect } from "react-suspense-async-effect";
 
 // Create a promise factory.
 const promiseFactory = (param1, param2, param3) =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     setTimeout(resolve, 3000, { param1, param2, param3 });
   });
 
@@ -62,4 +70,4 @@ export default App;
 
 ## License
 
-MIT © [tonix-tuft](https://github.com/tonix-tuft)
+MIT © [Anton Bagdatyev (Tonix)](https://github.com/tonix-tuft)
