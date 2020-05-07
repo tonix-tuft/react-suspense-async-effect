@@ -1,5 +1,5 @@
 import babel from "rollup-plugin-babel";
-import commonjs from "rollup-plugin-commonjs";
+import commonjs from "@rollup/plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import resolve from "rollup-plugin-node-resolve";
@@ -14,28 +14,28 @@ export default {
     {
       file: pkg.main,
       format: "cjs",
-      sourcemap: true
+      sourcemap: true,
     },
     {
       file: pkg.module,
       format: "es",
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   ],
   external: ["prop-types"],
   plugins: [
     external(),
     postcss({
-      modules: true
+      modules: true,
     }),
     url(),
     svgr(),
     babel({
       exclude: "node_modules/**",
       runtimeHelpers: true,
-      plugins: [["@babel/transform-runtime"]]
+      plugins: [["@babel/transform-runtime"]],
     }),
     resolve(),
-    commonjs()
-  ]
+    commonjs(),
+  ],
 };
