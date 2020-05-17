@@ -23,7 +23,7 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { isObject, stringHashArray } from "js-utl";
+import { isPlainObject, stringHashArray } from "js-utl";
 import { composeAsyncEffectCurriedFn } from "../fn/composeAsyncEffectCurriedFn";
 import { traversePOJOArgSubtree } from "../fn/traversePOJOArgSubtree";
 import { PROPS } from "../constants";
@@ -43,7 +43,7 @@ import { PROPS } from "../constants";
 export default function withPOJOArgAwareness(asyncEffectCurriedFn) {
   const newAsyncEffectFn = composeAsyncEffectCurriedFn(asyncEffectCurriedFn, {
     onEffectiveArgAdded: ({ curriedFn, addedArg, ...rest }) => {
-      if (isObject(addedArg)) {
+      if (isPlainObject(addedArg)) {
         const keys = Object.keys(addedArg);
         const keysHash = stringHashArray(keys);
         traversePOJOArgSubtree(curriedFn, addedArg, keysHash, keys);

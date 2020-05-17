@@ -73,7 +73,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
     "react": "^16.13.1",
@@ -85,11 +85,11 @@
     "rollup-plugin-peer-deps-external": "^2.2.2",
     "rollup-plugin-postcss": "^2.9.0",
     "rollup-plugin-url": "^3.0.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.2"
   },
   "dependencies": {
-    "prop-types": "^15.7.2",
-    "js-utl": "^4.0.0"
+    "js-utl": "^4.11.0",
+    "prop-types": "^15.7.2"
   },
   "files": [
     "dist"
