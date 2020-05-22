@@ -85,10 +85,10 @@
     "rollup-plugin-peer-deps-external": "^2.2.2",
     "rollup-plugin-postcss": "^2.9.0",
     "rollup-plugin-url": "^3.0.1",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.3"
   },
   "dependencies": {
-    "js-utl": "^4.11.0",
+    "js-utl": "^4.12.1",
     "prop-types": "^15.7.2"
   },
   "files": [
