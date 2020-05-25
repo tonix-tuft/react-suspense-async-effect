@@ -1,6 +1,6 @@
 {
   "name": "react-suspense-async-effect",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "description": "A library to perform asynchronous effects in React following the Suspense API principles providing asynchronous curried functions with a synchronous feel.",
   "author": "Anton Bagdatyev (Tonix)",
   "license": "MIT",
