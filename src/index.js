@@ -35,3 +35,4 @@ export { defaultAsyncEffectOptions } from "./asyncEffectOptions";
 export { default as withContext } from "./behaviours/withContext";
 export { default as withPOJOArgAwareness } from "./behaviours/withPOJOArgAwareness";
 export { default as withCacheInvalidation } from "./behaviours/withCacheInvalidation";
+export { default as Suspense } from "./components/Suspense";
