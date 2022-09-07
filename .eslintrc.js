@@ -2,19 +2,19 @@ module.exports = {
   parser: "babel-eslint",
   env: {
     browser: true,
-    es6: true
+    es6: true,
   },
   extends: ["eslint:recommended", "standard", "standard-react"],
   globals: {
     Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    SharedArrayBuffer: "readonly",
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: "module"
+    sourceType: "module",
   },
   plugins: ["react"],
   rules: {
@@ -25,8 +25,9 @@ module.exports = {
     "space-before-function-paren": "off",
     "no-unused-vars": ["error", { ignoreRestSiblings: true }],
     "no-console": "error",
+    "comma-dangle": "off",
     "standard/computed-property-even-spacing": "off",
-    "react/prop-types": 0
+    "react/prop-types": 0,
   },
-  overrides: []
+  overrides: [],
 };
