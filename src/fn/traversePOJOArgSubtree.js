@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Anton Bagdatyev (Tonix)
+ * Copyright (c) 2022 Anton Bagdatyev (Tonix)
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -41,7 +41,7 @@ export function traversePOJOArgSubtree(curriedFn, POJO, keysHash, keys) {
   let node;
   if (!currentAsyncEffectTreeNode.POJOArgSubtree.has(keysHash)) {
     node = {
-      keys
+      keys,
     };
     currentAsyncEffectTreeNode.POJOArgSubtree.set(keysHash, node);
   } else {

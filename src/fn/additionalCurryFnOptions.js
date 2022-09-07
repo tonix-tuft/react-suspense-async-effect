@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Anton Bagdatyev (Tonix)
+ * Copyright (c) 2022 Anton Bagdatyev (Tonix)
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -56,7 +56,7 @@ export function additionalCurryFnOptions({
   asyncEffectOptions,
   asyncEffectFnArgs,
   asyncEffectCurriedFnCallbacks,
-  onNewCurriedFnAlwaysCallback = void 0
+  onNewCurriedFnAlwaysCallback = void 0,
 }) {
   const {
     onCurriedFnFirstCall = ({ curriedFn }) => {
@@ -83,7 +83,7 @@ export function additionalCurryFnOptions({
       onNewCurriedFnCallback({
         newCurriedFn,
         curriedFn,
-        ...props
+        ...props,
       });
       return;
     }
@@ -112,15 +112,15 @@ export function additionalCurryFnOptions({
       asyncEffectCurriedFnCallbacks: {
         onCurriedFnFirstCall,
         onNewCurriedFn,
-        ...rest
+        ...rest,
       },
-      onNewCurriedFnAlwaysCallback
+      onNewCurriedFnAlwaysCallback,
     };
   };
 
   return {
     onCurriedFnFirstCall,
     onNewCurriedFn,
-    ...rest
+    ...rest,
   };
 }

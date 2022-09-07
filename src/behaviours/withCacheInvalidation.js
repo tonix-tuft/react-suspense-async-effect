@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Anton Bagdatyev (Tonix)
+ * Copyright (c) 2022 Anton Bagdatyev (Tonix)
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -55,7 +55,7 @@ import { PROPS } from "../constants";
  * @return {Function} A function accepting an async effect to change its behaviour through composition.
  */
 export default function withCacheInvalidation(cacheInvalidationCondition) {
-  return asyncEffectCurriedFn => {
+  return (asyncEffectCurriedFn) => {
     const newAsyncEffectFn = composeAsyncEffectCurriedFn(asyncEffectCurriedFn, {
       onFnCall: ({ curriedFn, ...rest }) => {
         if (
@@ -70,7 +70,7 @@ export default function withCacheInvalidation(cacheInvalidationCondition) {
             mustInvalidateCache = cacheInvalidationCondition({
               curriedFn,
               ...rest,
-              cache: curriedFn[PROPS].currentAsyncEffectTreeNode.cache
+              cache: curriedFn[PROPS].currentAsyncEffectTreeNode.cache,
             });
           }
           if (mustInvalidateCache) {
@@ -80,7 +80,7 @@ export default function withCacheInvalidation(cacheInvalidationCondition) {
         const onFnCall =
           asyncEffectCurriedFn[PROPS].asyncEffectCurriedFnCallbacks.onFnCall;
         return onFnCall({ curriedFn, ...rest });
-      }
+      },
     });
     return newAsyncEffectFn;
   };

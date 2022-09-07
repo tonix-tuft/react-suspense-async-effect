@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Anton Bagdatyev (Tonix)
+ * Copyright (c) 2022 Anton Bagdatyev (Tonix)
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -71,12 +71,12 @@ export function triggerAsyncEffect(curriedFn, fn, ...args) {
     !Object.prototype.hasOwnProperty.call(currentAsyncEffectTreeNode, "promise")
   ) {
     const promise = fn(...args).then(
-      value => {
+      (value) => {
         delete currentAsyncEffectTreeNode.promise;
         currentAsyncEffectTreeNode.cache = [value, void 0, true, false];
         return currentAsyncEffectTreeNode.cache;
       },
-      reason => {
+      (reason) => {
         delete currentAsyncEffectTreeNode.promise;
         currentAsyncEffectTreeNode.cache = [void 0, reason, false, true];
         return currentAsyncEffectTreeNode.cache;

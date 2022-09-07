@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Anton Bagdatyev (Tonix)
+ * Copyright (c) 2022 Anton Bagdatyev (Tonix)
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -59,7 +59,7 @@ export function POJOAsyncEffect(promiseFactory, options) {
     promiseFactory,
     baseCurryFnOptions: {
       plugPropertyName: PLUG_CURRIED_ASYNC_EFFECT_PROPERTY_NAME,
-      plugPropertyMustBeTruthy: true
+      plugPropertyMustBeTruthy: true,
     },
     asyncEffectFn: POJOAsyncEffect,
     asyncEffectOptions,
@@ -68,7 +68,7 @@ export function POJOAsyncEffect(promiseFactory, options) {
       onPOJOArgMerged: ({ POJOArg, curriedFn }) => {
         const { keysHash, keysMap } = curriedFn[PROPS];
         const newKeys = Object.keys(POJOArg).filter(
-          key => !Object.prototype.hasOwnProperty.call(keysMap, key)
+          (key) => !Object.prototype.hasOwnProperty.call(keysMap, key)
         );
         const mergeKeysMap = {};
         let newKeysHash = keysHash;
@@ -84,7 +84,7 @@ export function POJOAsyncEffect(promiseFactory, options) {
           curriedFn[PROPS].keysHash = newKeysHash;
           curriedFn[PROPS].keysMap = {
             ...keysMap,
-            ...mergeKeysMap
+            ...mergeKeysMap,
           };
         }
       },
@@ -96,7 +96,7 @@ export function POJOAsyncEffect(promiseFactory, options) {
         traversePOJOArgSubtree(curriedFn, POJO, keysHash, keys);
         resetPOJOAsyncEffectCurriedFnPropsIfNeeded(curriedFn);
         return triggerAsyncEffect(curriedFn, fn, POJO);
-      }
+      },
     },
     onNewCurriedFnAlwaysCallback: ({ newCurriedFn, curriedFn }) => {
       newCurriedFn[PROPS] = newCurriedFn[PROPS] || {};
@@ -110,6 +110,6 @@ export function POJOAsyncEffect(promiseFactory, options) {
       }
       newCurriedFn[PROPS].previousKeysHash = void 0;
       newCurriedFn[PROPS].previousKeysMap = void 0;
-    }
+    },
   });
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Anton Bagdatyev (Tonix)
+ * Copyright (c) 2022 Anton Bagdatyev (Tonix)
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -33,7 +33,7 @@ import { PROPS } from "../constants";
  * @return {Function} A function accepting an async effect to change its behaviour through composition.
  */
 export default function withContext(...asyncEffectContextKeys) {
-  return asyncEffectCurriedFn => {
+  return (asyncEffectCurriedFn) => {
     const newAsyncEffectFn = composeAsyncEffectCurriedFn(asyncEffectCurriedFn, {
       onCurriedFnFirstCall: ({ curriedFn, ...rest }) => {
         const { currentAsyncEffectTreeNode } = curriedFn[PROPS];
@@ -43,7 +43,7 @@ export default function withContext(...asyncEffectContextKeys) {
             PROPS
           ].asyncEffectCurriedFnCallbacks.onCurriedFnFirstCall({
             curriedFn,
-            ...rest
+            ...rest,
           });
           return;
         }
@@ -72,7 +72,7 @@ export default function withContext(...asyncEffectContextKeys) {
         }
         node.contextEndedSubtree = node.contextEndedSubtree || {};
         curriedFn[PROPS].currentAsyncEffectTreeNode = node.contextEndedSubtree;
-      }
+      },
     });
     return newAsyncEffectFn;
   };

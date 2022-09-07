@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Anton Bagdatyev (Tonix)
+ * Copyright (c) 2022 Anton Bagdatyev (Tonix)
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -27,7 +27,7 @@
  * @type {Object}
  */
 export const defaultAsyncEffectOptions = {
-  shouldReturnReason: false
+  shouldReturnReason: false,
 };
 
 /**
@@ -37,5 +37,5 @@ export const defaultAsyncEffectOptions = {
  * @param {Object} options The options overriding defaults.
  * @return {Object} The options merged with defaults.
  */
-export const makeAsyncEffectOptions = options =>
+export const makeAsyncEffectOptions = (options) =>
   Object.assign({}, defaultAsyncEffectOptions, options);
