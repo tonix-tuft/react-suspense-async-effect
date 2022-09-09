@@ -82,7 +82,7 @@ const Suspense = ({
   }, []);
 
   return (
-    <Suspense
+    <React.Suspense
       fallback={
         <FallbackDelayer
           fallback={fallback}
@@ -93,7 +93,7 @@ const Suspense = ({
     >
       {isWaitingFallbackMinDurationMs && <PromiseThrower />}
       {children}
-    </Suspense>
+    </React.Suspense>
   );
 };
 export default Suspense;
